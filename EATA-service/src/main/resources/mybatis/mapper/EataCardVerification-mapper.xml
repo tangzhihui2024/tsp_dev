@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.icbcaxa.eata.mapper.EataCardVerificationMapper" >
+    <resultMap id="BaseResultMap" type="com.icbcaxa.eata.entity.EataCardVerification" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="callSystem" property="callSystem" jdbcType="VARCHAR" />
+        <result column="function_module" property="functionModule" javaType="java.lang.String" />
+        <result column="identifier" property="identifier" jdbcType="VARCHAR" />
+        <result column="card_order_no" property="cardOrderNo" javaType="java.lang.String"/>
+        <result column="credit_swift_number" property="creditSwiftNumber" javaType="java.lang.String"/>
+        <result column="real_name" property="realName" jdbcType="VARCHAR" />
+        <result column="client_cardNo" property="clientCardNo" jdbcType="VARCHAR" />
+        <result column="response_code" property="responseCode" javaType="java.lang.String"/>
+        <result column="response_message" property="responseMessage" javaType="java.lang.String" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="remark1" property="remark1" javaType="java.lang.String" />
+        <result column="remark2" property="remark2" javaType="java.lang.String" />
+        <result column="remark3" property="remark3" javaType="java.lang.String" />
+    </resultMap>
+
+    <insert id="insert" parameterType="com.icbcaxa.eata.entity.EataCardVerification">
+        insert into eata_card_verification
+        (
+         id, callSystem,function_module,identifier,
+         card_order_no,credit_swift_number,real_name, client_cardNo,
+         response_code,response_message,create_time
+         )
+        values
+        (
+        #{id,jdbcType=VARCHAR}, #{callSystem,jdbcType=VARCHAR},#{functionModule,jdbcType=VARCHAR},#{identifier,jdbcType=VARCHAR},
+        #{cardOrderNo,jdbcType=VARCHAR},#{creditSwiftNumber,jdbcType=VARCHAR},#{realName,jdbcType=VARCHAR}, #{clientCardNo,jdbcType=VARCHAR},
+        #{responseCode,jdbcType=VARCHAR},#{responseMessage,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+</mapper>

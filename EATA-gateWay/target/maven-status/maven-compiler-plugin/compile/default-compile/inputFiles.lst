@@ -1,0 +1,12 @@
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\icbcaxa\eata\service\impl\GatewayPropertiesServiceImpl.java
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\icbcaxa\eata\GatewayApplication.java
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\marcosbarbero\cloud\autoconfigure\zuul\ratelimit\config\repository\RedisRateLimiter.java
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\icbcaxa\eata\filter\ResponseFilter.java
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\icbcaxa\eata\controller\HealthCheckController.java
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\icbcaxa\eata\filter\RateLimitErrorFilter.java
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\icbcaxa\eata\service\GatewayPropertiesService.java
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\icbcaxa\eata\controller\GatewayPropertiesController.java
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\icbcaxa\eata\utils\JSONUtil.java
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\icbcaxa\eata\controller\OController.java
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\icbcaxa\eata\handle\ServiceFallbackProvider.java
+D:\Project\EATA后台管理\EATA\EATA-gateWay\src\main\java\com\icbcaxa\eata\filter\AccessFilter.java

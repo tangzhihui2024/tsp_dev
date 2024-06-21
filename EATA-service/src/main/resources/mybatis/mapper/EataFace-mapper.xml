@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.icbcaxa.eata.mapper.EataFaceMapper" >
+    <resultMap id="BaseResultMap" type="com.icbcaxa.eata.entity.EataFace" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="channel" property="channel" jdbcType="VARCHAR" />
+        <result column="tr_code" property="trCode" jdbcType="VARCHAR" />
+        <result column="app_name" property="appName" javaType="java.lang.String"/>
+        <result column="app_info" property="appInfo" javaType="java.lang.String" />
+        <result column="sim" property="sim" javaType="java.lang.String"/>
+        <result column="defaultSim" property="defaultSim" javaType="java.lang.String" />
+        <result column="face_code" property="faceCode" javaType="java.lang.String" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="remark1" property="remark1" javaType="java.lang.String" />
+        <result column="remark2" property="remark2" javaType="java.lang.String" />
+        <result column="remark3" property="remark3" javaType="java.lang.String" />
+        <result column="img1" property="img1" javaType="java.lang.String"/>
+        <result column="img2" property="img2" javaType="java.lang.String"/>
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, channel,tr_code,app_name,app_info,sim,defaultSim,face_code,create_time,remark1,remark2,remark2,img1,img2
+    </sql>
+
+    <insert id="insert" parameterType="com.icbcaxa.eata.entity.EataFace">
+        insert into eata_face
+        (
+         id, channel, tr_code,app_name,
+         app_info,sim,defaultSim,face_code,
+         remark1,create_time,img1,img2
+         )
+        values
+        (
+        #{id,jdbcType=VARCHAR}, #{channel,jdbcType=VARCHAR}, #{trCode,jdbcType=VARCHAR},#{appName,jdbcType=VARCHAR},
+        #{appInfo,jdbcType=VARCHAR},#{sim,jdbcType=VARCHAR},#{defaultSim,jdbcType=VARCHAR}, #{faceCode,jdbcType=VARCHAR},
+        #{remark1,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP},#{img1,jdbcType=VARCHAR},#{img2,jdbcType=VARCHAR}
+        )
+    </insert>
+
+</mapper>

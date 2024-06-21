@@ -1,0 +1,13 @@
+com\icbcaxa\eata\handle\ServiceFallbackProvider.class
+com\icbcaxa\eata\utils\JSONUtil.class
+com\icbcaxa\eata\filter\ResponseFilter.class
+com\icbcaxa\eata\GatewayApplication.class
+com\marcosbarbero\cloud\autoconfigure\zuul\ratelimit\config\repository\RedisRateLimiter.class
+com\icbcaxa\eata\controller\HealthCheckController.class
+com\icbcaxa\eata\filter\RateLimitErrorFilter.class
+com\icbcaxa\eata\handle\ServiceFallbackProvider$1.class
+com\icbcaxa\eata\service\impl\GatewayPropertiesServiceImpl.class
+com\icbcaxa\eata\filter\AccessFilter.class
+com\icbcaxa\eata\controller\OController.class
+com\icbcaxa\eata\controller\GatewayPropertiesController.class
+com\icbcaxa\eata\service\GatewayPropertiesService.class

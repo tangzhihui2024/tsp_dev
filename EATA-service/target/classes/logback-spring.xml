@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+	<!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
+	<property name="LOG_HOME" value="/icbc-logs/eata-service" />
+	<!-- 项目名称配置 -->
+	<property name="LOG_PREFIX" value="eata-service" />
+
+	<!-- 控制台输出 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--[时间戳][当前线程][日志级别]+[功能模块] +[方法名]+ [描述信息]+[入参(可选)] -->
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%-5level] [eata-service] [%logger{50}] - %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<param name="Encoding" value="UTF-8" />
+	</appender>
+
+	<!-- 按照每天生成日志文件 -->
+	<appender name="FILE_ENV" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!--日志文件输出的文件名 -->
+			<FileNamePattern>${LOG_HOME}/${LOG_PREFIX}_%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+			<!--日志文件保留天数 -->
+			<MaxHistory>30</MaxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>200MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--[时间戳][当前线程][日志级别]+[功能模块] +[方法名]+ [描述信息]+[入参(可选)] -->
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%-5level] [eata-service] [%logger{50}] - %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<param name="Encoding" value="UTF-8" />
+	</appender>
+	<!-- 日志输出级别 -->
+	<!-- 开发环境日志输出方案 -->
+	<springProfile name="dev">
+		<root level="INFO">
+			<appender-ref ref="FILE_ENV" />
+			<appender-ref ref="STDOUT" />
+		</root>
+	</springProfile>
+	<!-- sit环境日志输出方案 -->
+	<springProfile name="sit">
+		<root level="INFO">
+			<appender-ref ref="FILE_ENV" />
+			<appender-ref ref="STDOUT" />
+		</root>
+	</springProfile>
+	<!-- uat环境日志输出方案 -->
+	<springProfile name="uat">
+		<root level="INFO">
+			<appender-ref ref="FILE_ENV" />
+			<appender-ref ref="STDOUT" />
+		</root>
+	</springProfile>
+	<!-- prod环境日志输出方案 -->
+	<springProfile name="prod">
+		<root level="INFO">
+			<appender-ref ref="FILE_ENV" />
+		</root>
+	</springProfile>
+
+</configuration>

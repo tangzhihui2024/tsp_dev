@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.icbcaxa.eata.mapper.EataLiveSctagCertMapper" >
+    <resultMap id="BaseResultMap" type="com.icbcaxa.eata.entity.EataLiveSctagCert" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="callSystem" property="callSystem" jdbcType="VARCHAR" />
+        <result column="identifier" property="identifier" jdbcType="VARCHAR" />
+        <result column="cert_id" property="certId" javaType="java.lang.String"/>
+        <result column="name" property="name" javaType="java.lang.String"/>
+        <result column="function_module" property="functionModule" javaType="java.lang.String" />
+        <result column="live_order_no" property="liveOrderNo" javaType="java.lang.String"/>
+        <result column="live_rate" property="liveRate" javaType="java.lang.String" />
+        <result column="live_code" property="liveCode" javaType="java.lang.String" />
+        <result column="credit_score" property="creditScore" javaType="java.lang.String" />
+        <result column="credit_code" property="creditCode" javaType="java.lang.String" />
+        <result column="remark1" property="remark1" javaType="java.lang.String" />
+        <result column="remark2" property="remark2" javaType="java.lang.String" />
+        <result column="request_time" property="requestTime" jdbcType="TIMESTAMP" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+        <result column="credit_swift_number" property="creditSwiftNumber" javaType="java.lang.String"/>
+        <result column="live_pic_url" property="livePicUrl" javaType="java.lang.String"/>
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, callSystem,identifier,cert_id,name,function_module,live_order_no,live_rate,live_code,credit_score,credit_code,
+        remark1,remark2,request_time,create_time,update_time,credit_swift_number,live_pic_url
+    </sql>
+
+    <insert id="insert" parameterType="com.icbcaxa.eata.entity.EataLiveSctagCert">
+        insert into eata_live_sctag_cert
+        (
+        id, callSystem, identifier,
+        cert_id, name,function_module,
+        live_order_no, live_rate,live_code,
+        credit_score, credit_code,request_time,
+        create_time,credit_swift_number,live_pic_url
+        )
+        values
+        (
+        #{id,jdbcType=VARCHAR}, #{callSystem,jdbcType=VARCHAR}, #{identifier,jdbcType=VARCHAR},
+        #{certId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},#{functionModule,jdbcType=VARCHAR},
+        #{liveOrderNo,jdbcType=VARCHAR}, #{liveRate,jdbcType=VARCHAR}, #{liveCode,jdbcType=TIMESTAMP},
+        #{creditScore,jdbcType=VARCHAR},#{creditCode,jdbcType=TIMESTAMP},#{requestTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=TIMESTAMP}, #{creditSwiftNumber,jdbcType=VARCHAR},#{livePicUrl,jdbcType=VARCHAR}
+        )
+    </insert>
+
+</mapper>

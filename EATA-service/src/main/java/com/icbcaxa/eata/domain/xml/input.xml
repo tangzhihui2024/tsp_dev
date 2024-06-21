@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageList>
+  <Package>
+    <Header> 
+      <ServiceID>${package.head.serviceID}</ServiceID>  
+      <Version>${package.head.version}</Version>  
+      <UUID>${package.head.uuid}</UUID>  
+      <From>${package.head.from}</From>  
+      <TransactionTime>${package.head.transactionTime}</TransactionTime>  
+      <Ctrl> 
+        <RecordStart>${package.head.ctrl.recordStart}</RecordStart> 
+        <RecordNumber>${package.head.ctrl.recordNumber}</RecordNumber>
+      </Ctrl>
+    </Header>
+    <Request>
+      <customerName>${package.request.customerName}</customerName>
+      <customerSex>${package.request.customerSex}</customerSex>
+      <customerBirthday>${package.request.customerBirthday}</customerBirthday>
+      <certType>${package.request.certType}</certType>
+      <IDNo>${package.request.iDNo}</IDNo>
+    </Request>
+  </Package>
+</PackageList>
