@@ -47,6 +47,7 @@ public class AccreditController {
             return new Response<>(Response.ERROR,"访问授权码校验失败");
         }
     }
+
     /**
      * 访问授权码更新
      * @param accreditVO
